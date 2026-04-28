@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Mateo Franco - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: hwb(68 62% 9%);
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        nav {
+            width: 100%;
+            padding: 20px;
+            background: transparent;
+            position: absolute;
+            top: 0;
+            z-index: 100;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+        }
+        a {
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2c3e50; 
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #e67e22;
+        }
+        .home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .home p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .name {
+            color: #f39c12;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            display: block;
+            margin: 10px 0;
+        }
+        .btn-about {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            border: 2px solid #5247a3;
+            color: #5247a3;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        section:not(.home) {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        @media screen and (max-width: 768px) {
+            ul {
+                gap: 15px; /* Menos espacio entre links en móvil */
+            }
+            
+            a {
+                font-size: 0.9rem;
+            }
+
+            .home p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="home" id="home">
+    <p>Hello, my name is</p>
+    <h1><span class="name">Mateo Franco Medina</span></h1>
+    <p>I am a Developer</p>
+    <a href="#about" class="btn-about">More about me</a>
+</section>
+
+<section id="about">
+    <h2>ABOUT ME</h2>
+    <p>
+        I am a motivated Junior Developer with a solid foundation in both web development
+        and computational analysis. I specialize in building responsive interfaces using
+        HTML5 and CSS3, while leveraging JavaScript to create interactive user 
+        experiences.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <p>
+        Proficient in HTML, CSS, and JavaScript. Skilled in Python and MATLAB for logic 
+        and data-driven problem solving. Experienced in version control using Git.
+    </p>
+    </section>
+
+<section id="projects">
+    <h2>PROJECTS</h2>
+    <h3>San Valentine Card</h3>
+    <p>A web project created with HTML and CSS.</p>
+</section>
+
+</body>
+</html>
