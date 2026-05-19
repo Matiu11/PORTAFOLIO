@@ -1,151 +1,499 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Mateo Franco - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: hwb(68 62% 9%);
-            font-family: 'Playfair Display', serif;
-            color: #2c3e50;
-            line-height: 1.6;
-        }
-        nav {
-            width: 100%;
-            padding: 20px;
-            background: transparent;
-            position: absolute;
-            top: 0;
-            z-index: 100;
-        }
-        ul {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            list-style: none;
-        }
-        a {
-            font-family: 'Poppins', sans-serif;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #2c3e50; 
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #e67e22;
-        }
-        .home {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .home p {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .name {
-            color: #f39c12;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 700;
-            display: block;
-            margin: 10px 0;
-        }
-        .btn-about {
-            margin-top: 2rem;
-            padding: 0.8rem 2rem;
-            border: 2px solid #5247a3;
-            color: #5247a3;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        section:not(.home) {
-            padding: 80px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        @media screen and (max-width: 768px) {
-            ul {
-                gap: 15px; /* Menos espacio entre links en móvil */
-            }
-            
-            a {
-                font-size: 0.9rem;
-            }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-            .home p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<title>Mateo Franco - Portfolio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background-color:hwb(68 62% 9%);
+font-family:'Playfair Display', serif;
+color:#2c3e50;
+line-height:1.6;
+padding-top:20px;
+margin-left:90px;
+margin-right:30px;
+}
+
+.side-index{
+position:fixed;
+left:25px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:22px;
+z-index:999;
+}
+
+.side-index::before{
+content:"";
+position:absolute;
+width:2px;
+height:100%;
+background:#2c3e50;
+opacity:0.3;
+z-index:-1;
+}
+
+.side-index a{
+width:42px;
+height:42px;
+border-radius:50%;
+background:white;
+border:2px solid #2c3e50;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-family:'Poppins', sans-serif;
+font-size:0.9rem;
+font-weight:600;
+color:#2c3e50;
+transition:0.3s ease;
+}
+
+.side-index a:hover{
+background:#f39c12;
+border-color:#f39c12;
+color:white;
+transform:scale(1.1);
+}
+
+nav{
+width:fit-content;
+margin:0 auto 20px auto;
+padding:15px 30px;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(10px);
+position:sticky;
+top:15px;
+z-index:1000;
+border-radius:30px;
+}
+
+ul{
+display:flex;
+justify-content:center;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+font-family:'Poppins', sans-serif;
+text-decoration:none;
+font-size:1rem;
+font-weight:bold;
+color:#2c3e50;
+transition:color 0.3s ease;
+}
+
+nav a:hover{
+color:#e67e22;
+}
+
+.home{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+}
+
+.home p{
+font-size:1.2rem;
+margin-bottom:0.5rem;
+}
+
+.name{
+color:#f39c12;
+font-size:clamp(2.5rem, 8vw, 4.5rem);
+font-weight:700;
+display:block;
+margin:10px 0;
+}
+
+.btn-about{
+margin-top:1rem;
+padding:0.8rem 2rem;
+border:2px solid #5247a3;
+color:#5247a3;
+font-family:'Poppins', sans-serif;
+font-weight:600;
+border-radius:50px;
+transition:all 0.3s ease;
+display:inline-block;
+text-decoration:none;
+}
+
+.btn-about:hover{
+background:#5247a3;
+color:white;
+}
+
+section:not(.home){
+padding:55px 20px;
+max-width:900px;
+margin:0 auto;
+text-align:center;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:20px;
+text-transform:uppercase;
+letter-spacing:2px;
+}
+
+.about-container{
+display:flex;
+align-items:center;
+gap:45px;
+text-align:left;
+}
+
+.about-container img{
+width:250px;
+max-width:100%;
+border-radius:10px;
+}
+
+.about-text{
+flex:1;
+}
+
+.about-text h3{
+margin-bottom:15px;
+}
+
+#skills p{
+margin-bottom:35px;
+}
+
+.skills-container{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:35px;
+margin-top:30px;
+}
+
+.skill-card{
+width:120px;
+height:120px;
+background:white;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+transition:all 0.3s ease;
+}
+
+.skill-card:hover{
+transform:translateY(-6px) scale(1.05);
+box-shadow:0 12px 22px rgba(0,0,0,0.15);
+}
+
+.skill-card img{
+width:70px;
+height:70px;
+object-fit:contain;
+}
+
+#projects h3{
+margin-top:15px;
+margin-bottom:10px;
+}
+
+#projects p{
+margin-bottom:25px;
+}
+
+#projects img{
+width:500px;
+max-width:100%;
+height:auto;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+transition:0.3s ease;
+cursor:pointer;
+}
+
+#projects img:hover{
+transform:scale(1.02);
+box-shadow:0 14px 28px rgba(0,0,0,0.22);
+}
+
+footer{
+margin-top:50px;
+padding:45px 20px;
+text-align:center;
+background:rgba(255,255,255,0.5);
+border-radius:25px 25px 0 0;
+}
+
+.footer-icons{
+display:flex;
+justify-content:center;
+gap:35px;
+margin:25px 0;
+}
+
+.footer-icons a{
+font-size:2rem;
+color:#2c3e50;
+transition:0.3s ease;
+}
+
+.footer-icons a:hover{
+color:#f39c12;
+transform:translateY(-4px);
+}
+
+.footer-email{
+font-family:'Poppins', sans-serif;
+font-size:1rem;
+}
+
+@media screen and (max-width:700px){
+
+.side-index{
+display:none;
+}
+
+body{
+margin-left:15px;
+margin-right:15px;
+}
+}
+
+@media screen and (max-width:768px){
+
+nav{
+width:100%;
+padding:12px 15px;
+top:10px;
+}
+
+ul{
+gap:15px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-size:0.9rem;
+}
+
+.home p{
+font-size:1rem;
+}
+
+.about-container{
+flex-direction:column;
+text-align:center;
+}
+
+.skills-container{
+gap:20px;
+}
+
+.skill-card{
+width:100px;
+height:100px;
+}
+
+.skill-card img{
+width:60px;
+height:60px;
+}
+
+footer{
+border-radius:20px 20px 0 0;
+}
+}
+
+</style>
 </head>
+
 <body>
 
+<div class="side-index">
+<a href="#home">01</a>
+<a href="#about">02</a>
+<a href="#skills">03</a>
+<a href="#projects">04</a>
+<a href="#footer">05</a>
+</div>
+
 <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#footer">Contact</a></li>
+</ul>
 </nav>
 
 <section class="home" id="home">
-    <p>Hello, my name is</p>
-    <h1><span class="name">Mateo Franco Medina</span></h1>
-    <p>I am a Developer</p>
-    <a href="#about" class="btn-about">More about me</a>
+
+<p>Hello, my name is</p>
+
+<h1>
+<span class="name">Mateo Franco Medina</span>
+</h1>
+
+<p>I am a Developer</p>
+
+<a href="#about" class="btn-about">
+More about me
+</a>
+
 </section>
 
 <section id="about">
-    <h2>ABOUT ME</h2>
-    <p>
-        I am a motivated Junior Developer with a solid foundation in both web development
-        and computational analysis. I specialize in building responsive interfaces using
-        HTML5 and CSS3, while leveraging JavaScript to create interactive user 
-        experiences.
-    </p>
+
+<h2>ABOUT ME</h2>
+
+<div class="about-container">
+
+<img src="https://img.freepik.com/vector-premium/ilustracion-persona-rostro-estilo-diseno-plano_995281-13986.jpg?w=2000" alt="About me image">
+
+<div class="about-text">
+
+<h3>
+Hi, My name is Mateo Franco, I'm 18 years old and I live in Colombia, Bogotá
+</h3>
+
+<p>
+I am a motivated Junior Developer with a solid foundation in both web development
+and computational analysis. I specialize in building responsive interfaces using
+HTML5 and CSS3, while leveraging JavaScript to create interactive user experiences.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="skills">
-    <h2>Skills</h2>
-    <p>
-        Proficient in HTML, CSS, and JavaScript. Skilled in Python and MATLAB for logic 
-        and data-driven problem solving. Experienced in version control using Git.
-    </p>
-    </section>
+
+<h2>SKILLS</h2>
+
+<p>
+Proficient in HTML, CSS, JavaScript, Python and MATLAB.
+Experienced in Git and collaborative development workflows.
+</p>
+
+<div class="skills-container">
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecolab/googlecolab-original.svg" alt="Google Colab">
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB">
+</div>
+
+</div>
+
+</section>
 
 <section id="projects">
-    <h2>PROJECTS</h2>
-    <h3>San Valentine Card</h3>
-    <p>A web project created with HTML and CSS.</p>
+
+<h2>PROJECTS</h2>
+
+<h3>San Valentine Card</h3>
+
+<p>
+A web project created with HTML and CSS.
+</p>
+
+<a href="https://github.com/Matiu11/San-Valentin-Carta" target="_blank">
+
+<img 
+src="imagenes/Captura de pantalla_5-5-2026_145035_127.0.0.1.jpeg" 
+alt="Project image">
+
+</a>
+
 </section>
+
+<footer id="footer">
+
+<h2>Contact</h2>
+
+<div class="footer-icons">
+
+<a href="https://github.com/" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="mailto:mateofrancomed@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://linkedin.com/" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+</div>
+
+<p class="footer-email">
+mateofrancomed@gmail.com
+</p>
+
+</footer>
 
 </body>
 </html>
